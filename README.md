@@ -2,6 +2,8 @@
 
 Guia Gastronômico de São Luís · Desenvolvimento de Sistemas Web · UFMA · 2026.2.
 
+[Aplicativo online](https://joaogabrielol.github.io/guia-gastronomico-sao-luis/) · [Repositório](https://github.com/JoaoGabrielol/guia-gastronomico-sao-luis)
+
 Aplicação acadêmica em **HTML, CSS e JavaScript, sem frameworks**, com API REST do Supabase (PostgreSQL e Auth). A proposta citava React/Next.js; a implementação usa JavaScript puro para atender ao requisito explícito da Etapa 2.
 
 ![Página inicial](docs/desktop.png)

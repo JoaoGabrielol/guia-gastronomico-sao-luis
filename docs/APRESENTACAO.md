@@ -26,7 +26,7 @@ Professor, boa noite.
 
 Segue o repositório do aplicativo Guia Gastronômico de São Luís (Sabores da Ilha), referente à Etapa 2:
 
-[INSERIR LINK DO REPOSITÓRIO]
+https://github.com/JoaoGabrielol/guia-gastronomico-sao-luis
 
 A implementação utiliza HTML, CSS e JavaScript sem frameworks, com Supabase para dados e autenticação. O README documenta o funcionamento, como executar e o uso de IA.
 
