@@ -36,9 +36,9 @@ async function request(endpoint, { method = 'GET', body, authenticated = false, 
   let data;
   try { data = text ? JSON.parse(text) : null; } catch { throw new Error('O serviço retornou uma resposta inválida.'); }
   if (!response.ok) {
-    if (response.status === 401) throw new Error('E-mail ou senha inválidos, ou sessão expirada.');
+    if (response.status === 401 || data?.error_code === 'invalid_credentials') throw new Error('E-mail ou senha inválidos, ou sessão expirada.');
     if (response.status === 429) throw new Error('Muitas tentativas. Aguarde alguns minutos.');
-    if (data?.code === 'email_not_confirmed') throw new Error('Confirme seu e-mail antes de entrar.');
+    if ((data?.code || data?.error_code) === 'email_not_confirmed') throw new Error('Confirme seu e-mail antes de entrar.');
     if (data?.code === '23505') throw new Error('Você já avaliou este lugar. Reabra os detalhes para editar.');
     throw new Error(data?.msg || data?.message || data?.error_description || 'Não foi possível concluir a operação.');
   }
