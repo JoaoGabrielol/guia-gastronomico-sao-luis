@@ -47,14 +47,6 @@ Sem configuração, o catálogo local funciona em modo de demonstração. Login 
 | config.example.js | Modelo de configuração sem chave |
 | docs/ | Capturas, verificação e roteiro de apresentação |
 
-Ao carregar, `fetch` consulta `GET /rest/v1/places`. A busca filtra o catálogo retornado por nome e categoria. Os detalhes consultam `GET /rest/v1/reviews`. Login usa `POST /auth/v1/token?grant_type=password`; avaliações usam POST, PATCH e DELETE com token de acesso. O banco decide quais operações são permitidas.
-
-## Segurança
-
-RLS habilitado nas duas tabelas; leitura pública; escrita no catálogo negada a usuários comuns. Avaliações exigem `auth.uid() = user_id`, inclusive após UPDATE. `UNIQUE(place_id,user_id)` impede duplicatas e CHECK valida nota e comentário. Dados digitados e recebidos entram no DOM com `textContent`, nunca `innerHTML`.
-
-Senhas são enviadas por HTTPS ao Supabase e não são armazenadas pelo app. A sessão fica em sessionStorage, com renovação antes de operações autenticadas. `config.js` é ignorado pelo Git; não há chaves no código versionado ou no histórico. A chave publicável é visível no navegador por definição, mas não concede acesso administrativo: a proteção é imposta pelo RLS. O nome de exibição é escolhido pelo usuário e não comprova identidade real.
-
 ## Evidência da aba Rede
 
 **Pendência antes da entrega:** anexar a captura real da aba Rede em `docs/rede.png` e inserir a imagem aqui. A captura da página inicial não substitui esse requisito.
@@ -69,14 +61,4 @@ Testados no navegador: catálogo online, busca sem acento, filtro, estado sem re
 
 ## Uso de IA
 
-Foi utilizado ChatGPT/Codex para interpretar a atividade e a proposta, gerar a implementação inicial, integrar o Supabase, configurar SQL/RLS, apoiar testes e escrever documentação. O pedido foi construir o guia gastronômico com base nos dois documentos. A assistência incluiu produção substancial de código, não apenas revisão.
-
-O aluno confirmou a criação de um projeto Supabase novo. A troca de frameworks por JavaScript puro, a identidade visual e o catálogo demonstrativo foram implementados com assistência de IA. Não são atribuídas ao aluno alterações manuais ainda não realizadas. Antes da entrega, revise o código e registre aqui eventuais alterações próprias; consulte `docs/APRESENTACAO.md` para estudar o funcionamento.
-
-## Limites e referências
-
-Trilha B: API externa do próprio projeto Supabase, com leitura pública; não é uma API pública de restaurantes de terceiros. O cadastro pode exigir confirmação por e-mail e está sujeito aos limites do serviço. A indisponibilidade da API aciona o catálogo local; não permite gravar avaliações offline.
-
-Arte visual feita com CSS e símbolos tipográficos, sem imagens de terceiros ou fontes externas.
-
-Documentação: [Supabase Auth](https://supabase.com/docs/guides/auth/passwords) e [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security).
+Foi utilizado ChatGPT/Codex para interpretar a atividade e a proposta, ajudar ao longe da implementação, e auxiliar revisando o código. 
