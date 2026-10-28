@@ -49,16 +49,11 @@ Sem configuração, o catálogo local funciona em modo de demonstração. Login 
 
 ## Evidência da aba Rede
 
-**Pendência antes da entrega:** anexar a captura real da aba Rede em `docs/rede.png` e inserir a imagem aqui. A captura da página inicial não substitui esse requisito.
+![Consulta à API do Supabase: método GET e status 200 OK](docs/rede.png)
 
-Abra F12 → Rede/Network, recarregue a página e selecione `places?select=*&order=id.asc`. Em Cabeçalhos/Headers, capture **Request URL**, **Request Method: GET** e **Status Code: 200**. Não capture senhas ou tokens de login.
-
-A requisição GET consulta a API REST externa do Supabase para obter o catálogo. O status 200 indica sucesso; a resposta JSON é transformada em cartões pelo JavaScript. As operações de login e avaliação são feitas por outras requisições.
-
-## Verificação
-
-Testados no navegador: catálogo online, busca sem acento, filtro, estado sem resultado, detalhes, formulários e layout móvel em 390 px. A API passou por testes de leitura pública, bloqueio anônimo, login, criação de avaliação, duplicata, nota inválida, edição, proteção do catálogo, exclusão e logout. A conta técnica utilizada é descartável e não faz parte da entrega. O recebimento de confirmação de cadastro exige e-mail real e não foi comprovado pelo teste técnico.
+O print mostra uma requisição GET ao endpoint `/rest/v1/places` da API do Supabase para consultar os estabelecimentos.
+O status **200 OK** confirma que a consulta foi bem-sucedida; a resposta JSON é usada pelo JavaScript para montar os cartões do catálogo.
 
 ## Uso de IA
 
-Foi utilizado ChatGPT/Codex para interpretar a atividade e a proposta, ajudar ao longe da implementação, e auxiliar revisando o código. 
+Foi utilizado ChatGPT/Codex para interpretar a atividade e a proposta, gerar a implementação inicial, apoiar o desenvolvimento e revisar o código.
