@@ -1,0 +1,6 @@
+.env
+.env.*
+config.local.js
+*.zip
+node_modules/
+config.js
